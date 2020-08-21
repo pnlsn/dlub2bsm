@@ -4,5 +4,5 @@ mkdir dlub2bsm
 cd dlub2bsm
 mkdir Welcome Mindset Foundation Automation
 curl -O https://raw.githubusercontent.com/pnlsn/dlub2bsm/master/dlvideo.sh
-rm install.sh
 cd ~/Desktop/dlub2bsm
+rm install.sh
