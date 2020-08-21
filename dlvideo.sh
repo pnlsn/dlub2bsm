@@ -1,5 +1,4 @@
-DIR=$1
-FILENAME=$2
+FILENAME=$1
 HTML=`pbpaste`
 #HTML=`cat source.html`
 WVIDEOID=`echo $HTML | sed -e 's/^.*?wvideo=//' | sed -e 's/\".*//'`
@@ -11,6 +10,6 @@ echo 'JSON'
 DLURL=`echo $JSON | jq -r '.assets[] | select(.display_name=="250p").url'`
 echo $DLURL
 curl -O $DLURL
-OUTPATH="./${DIR}/${FILENAME}.mp4"
+OUTPATH="./${FILENAME}.mp4"
 mv *.bin $OUTPATH
 echo "Successfully created file ${OUTPATH}"
