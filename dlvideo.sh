@@ -11,6 +11,6 @@ echo 'JSON'
 DLURL=`echo $JSON | jq -r '.assets[] | select(.display_name=="250p").url'`
 echo $DLURL
 curl -O $DLURL
-OUTPATH="./${DIR}/$FILENAME.mp4"
+OUTPATH="./${DIR}/${FILENAME}.mp4"
 mv *.bin $OUTPATH
 echo "Successfully created file ${OUTPATH}"
