@@ -13,10 +13,10 @@ A250PDLURL=`echo $JSON | jq -r '.assets[] | select(.display_name=="250p").url'`
 A540PDLURL=`echo $JSON | jq -r '.assets[] | select(.display_name=="540p").url'`
 A720PDLURL=`echo $JSON | jq -r '.assets[] | select(.display_name=="720p").url'`
 echo "Original File link: ${ORIGINALDLURL}" >> ${FILENAME}_dl_urls.txt
-echo "360p link: ${A360PDLURL}" >> ${FILENAME}_dl_urls.txt
-echo "250p link: ${A250PDLURL}" >> ${FILENAME}_dl_urls.txt
-echo "540p link: ${A540PDLURL}" >> ${FILENAME}_dl_urls.txt
-echo "720p link: ${A720PDLURL}" >> ${FILENAME}_dl_urls.txt
+echo "360p link: ${A360PDLURL}" | sed 's/\.bin/\.mp4/' >> ${FILENAME}_dl_urls.txt
+echo "250p link: ${A250PDLURL}" | sed 's/\.bin/\.mp4/' >> ${FILENAME}_dl_urls.txt
+echo "540p link: ${A540PDLURL}" | sed 's/\.bin/\.mp4/' >> ${FILENAME}_dl_urls.txt
+echo "720p link: ${A720PDLURL}" | sed 's/\.bin/\.mp4/' >> ${FILENAME}_dl_urls.txt
 curl -O $A720PDLURL
 OUTPATH="./${FILENAME}.mp4"
 mv *.bin $OUTPATH
