@@ -1,5 +1,5 @@
 STARTDIR=`pwd`
-cd=~/Desktop
+cd ~/Desktop
 mkdir dlub2bsm
 cd dlub2bsm
 mkdir Welcome Mindset Foundation Automation
